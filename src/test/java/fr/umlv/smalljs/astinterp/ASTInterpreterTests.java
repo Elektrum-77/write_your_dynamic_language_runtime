@@ -25,7 +25,6 @@ public class ASTInterpreterTests {
     return outStream.toString(UTF_8).replace("\r\n", "\n");
   }
 
-  /*
   @Tag("Q2") @Test
   public void helloString() {
     assertEquals("", execute("\"hello\"\n"));
@@ -232,17 +231,17 @@ public class ASTInterpreterTests {
             print(f(7));
             """));
   }
-  
+
   @Tag("Q12") @Test
   public void callFibo() {
     assertEquals("21\n", execute("""
             function fibo(n) {
-                if (n < 2) {
-                  return 1
-                } else {
-                  return fibo(n - 1) + fibo(n - 2)
-                }
+              if (n < 2) {
+                return 1
+              } else {
+                return fibo(n - 1) + fibo(n - 2)
               }
+            }
 
             print(fibo(7))
             """));
@@ -282,7 +281,7 @@ public class ASTInterpreterTests {
             print(f());
             """));
   }
-  
+
   @Tag("Q13") @Test
   public void createAnObject() {
     assertEquals("""
@@ -300,7 +299,7 @@ public class ASTInterpreterTests {
                 print(o);
                 """));
   }
-  
+
   @Tag("Q14") @Test
   public void createAnObjectFromAVariableValue() {
     assertEquals("""
@@ -319,6 +318,7 @@ public class ASTInterpreterTests {
                 print(o);
                 """));
   }
+
   @Tag("Q14") @Test
   public void createAnObjectEvaluationOrder() {
     assertEquals(
@@ -329,8 +329,7 @@ public class ASTInterpreterTests {
                   b: print('b')
                 };"""));
   }
-  
-  
+
   @Tag("Q15") @Test
   public void objectGetAFieldValue() {
     assertEquals(
@@ -387,5 +386,7 @@ public class ASTInterpreterTests {
                 object.foo(42);
                 object.foo(42);
                 """));
-  }*/
+  }
+
+  /**/
 }
